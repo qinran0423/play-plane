@@ -25,6 +25,7 @@ const renderer = createRenderer<Container, Container>({
         break
 
       default:
+        el[key] = nextValue
         break
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <Container :x="data.x" :y="data.y"
+  <Container :x="plane.x" :y="plane.y"
     ><Sprite :texture="planeImg"></Sprite
   ></Container>
 </template>
@@ -7,18 +7,24 @@
 <script setup lang="ts">
 import { reactive } from "vue"
 import planeImg from "../assets/plane.png"
-import { setupPlane } from "../game/plane"
+import { setupPlane } from "../game"
 
-const data = reactive({})
-
-setupPlane(data)
+const plane = setupPlane(reactive({}))
 
 window.addEventListener("keydown", (e) => {
   switch (e.code) {
     case "ArrowDown":
-      data.moveDown()
+      plane.moveDown()
       break
-
+    case "ArrowUp":
+      plane.moveUp()
+      break
+    case "ArrowLeft":
+      plane.moveLeft()
+      break
+    case "ArrowRight":
+      plane.moveRight()
+      break
     default:
       break
   }
