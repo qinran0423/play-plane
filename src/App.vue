@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import Plane from "./components/Plane.vue"
+import Bullet from "./components/Bullet.vue"
+import { reactive } from "vue"
+import { initGame } from "./game"
+
+const { plane, bullets } = initGame(reactive({}), reactive([]))
 </script>
 
 <template>
-  <Container><Plane></Plane></Container>
+  <Container
+    ><Plane :plane="plane"></Plane
+    ><Bullet v-for="bullet in bullets" :x="bullet.x" :y="bullet.y"></Bullet
+  ></Container>
 </template>
