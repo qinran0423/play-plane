@@ -1,4 +1,4 @@
-import Bullet from "./Bullet"
+import { Bullet } from "./Bullet"
 
 export interface Plane {
   run()
