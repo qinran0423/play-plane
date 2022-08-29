@@ -1,6 +1,7 @@
 import { Bullet } from "./Bullet"
 
 export interface Plane {
+  bullets: Bullet[]
   run()
   attack()
   x: number
@@ -13,7 +14,7 @@ export interface Plane {
 
 const defaultOptions = {
   x: 0,
-  y: 0,
+  y: 300,
   speed: 5
 }
 

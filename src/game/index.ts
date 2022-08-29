@@ -1,6 +1,7 @@
 import { Application } from "pixi.js"
 import { Bullet } from "./Bullet"
 import { EnemyPlane, initEnemeyPlanes, runEnemyPlanes } from "./EnemyPlane"
+import { fighting } from "./fighting"
 import { Plane, setupPlane } from "./plane"
 
 export * from "./plane"
@@ -31,7 +32,7 @@ export function initGame(_plane, bullets: Bullet[], enemyPlanes: EnemyPlane[]) {
 function mianTicker(plane: Plane, enemyPlanes: EnemyPlane[]) {
   game.ticker.add(() => {
     plane.run()
-
     runEnemyPlanes(enemyPlanes)
+    fighting(plane, enemyPlanes)
   })
 }

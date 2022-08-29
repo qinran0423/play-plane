@@ -1,7 +1,9 @@
 export class EnemyPlane {
   public y: number = 0
   public x: number = 0
-  public speed: number = 5
+  public speed: number = 1
+  public width: number = 0
+  public height: number = 0
   constructor() {}
 
   move() {
@@ -10,8 +12,10 @@ export class EnemyPlane {
 }
 
 export function initEnemeyPlanes(enemyPlanes: EnemyPlane[]) {
-  const enemy = new EnemyPlane()
-  enemyPlanes.push(enemy)
+  setInterval(() => {
+    const enemy = new EnemyPlane()
+    enemyPlanes.push(enemy)
+  }, 2000)
 }
 
 export function runEnemyPlanes(enemyPlanes: EnemyPlane[]) {
